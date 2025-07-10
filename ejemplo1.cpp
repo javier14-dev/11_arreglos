@@ -1,21 +1,20 @@
 #include <iostream>
 using namespace std;
-int main()
-{
-    int n, max, A[20];
-    cin >> n;
-    for (int i = 0; i < n; i++)
-    {
+
+int main() {
+    int numeroElementos, numeroMayor, A[20];
+    cout << "Ingrese el cantidad de elementos del arreglo: ";
+    cin >> numeroElementos;
+    for (int i = 0; i < numeroElementos; i++) {
+        cout << "Ingrese el elemento " << i + 1 << " del arreglo: ";
         cin >> A[i];
     }
-    max = A[0];
-    for (int i = 1; i < n; i++)
-    {
-        if (A[i] > max)
-        {
-            max = A[i];
+    numeroMayor = A[0];
+    for (int i = 1; i < n; i++) {
+        if (A[i] > numeroMayor) {
+            numeroMayor = A[i];
         }
     }
-    cout << max;
+    cout << "El mayor elemento del arreglo es: "<< numeroMayor;
     return 0;
 }
