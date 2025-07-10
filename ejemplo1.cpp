@@ -2,9 +2,11 @@
 using namespace std;
 
 int numeroMayor(int arreglo[], int numeroElementos);
+bool validacionDato(int numeroElementos);
 
 int main() {
     int numeroElementos, mayor, Arreglo[100], i, sumaElementos;
+    bool comprobar;
     sumaElementos = 0;
     cout << "Ingrese el cantidad de elementos del arreglo: ";
     cin >> numeroElementos;
@@ -15,6 +17,11 @@ int main() {
     }
 
     mayor = numeroMayor(Arreglo, numeroElementos);
+    comprobar = validacionDato(numeroElementos);
+    if(comprobar) {
+        cout << "El numero de elementos tiene que ser mayor a 0" << endl;
+        return 1;
+    }
     cout << "La suma de elementos del arreglo es: " << sumaElementos << endl;
     cout << "El mayor elemento del arreglo es: "<< mayor << endl;
     return 0;
@@ -28,4 +35,8 @@ int numeroMayor(int arreglo[], int numeroElementos) {
         }
     }
     return numeroMayor;
+}
+
+bool validacionDato(int numeroElementos) {
+    return numeroElementos < 0;
 }
