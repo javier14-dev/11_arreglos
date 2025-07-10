@@ -1,20 +1,27 @@
 #include <iostream>
 using namespace std;
 
+int numeroMayor(int arreglo[], int numeroElementos);
 int main() {
-    int numeroElementos, numeroMayor, Arreglo[20];
+    int numeroElementos, mayor, Arreglo[100], i;
     cout << "Ingrese el cantidad de elementos del arreglo: ";
     cin >> numeroElementos;
-    for (int i = 0; i < numeroElementos; i++) {
+    for (i = 0; i < numeroElementos; i++) {
         cout << "Ingrese el elemento " << i + 1 << " del arreglo: ";
         cin >> Arreglo[i];
     }
-    numeroMayor = Arreglo[0];
+
+    mayor = numeroMayor(Arreglo, numeroElementos);
+    cout << "El mayor elemento del arreglo es: "<< mayor;
+    return 0;
+}
+
+int numeroMayor(int arreglo[], int numeroElementos) {
+    int numeroMayor = arreglo[0];
     for (int i = 1; i < numeroElementos; i++) {
-        if (Arreglo[i] > numeroMayor) {
-            numeroMayor = Arreglo[i];
+        if (arreglo[i] > numeroMayor) {
+            numeroMayor = arreglo[i];
         }
     }
-    cout << "El mayor elemento del arreglo es: "<< numeroMayor;
-    return 0;
+    return numeroMayor;
 }
